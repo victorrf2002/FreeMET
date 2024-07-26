@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+
+    <div>
+        <% if (locals.randomArtwork) { %>
+            <img id="art-image" src="<%= randomArtwork.artImage %>">
+            <h2>
+                <%= randomArtwork.artTitle%>
+            </h2>
+            <h3>
+                <%= randomArtwork.artArtistName%>
+            </h3>
+            <div>
+                <p>
+                    <%= randomArtwork.artPeriod %>
+                        <%= randomArtwork.artArtistBio %>
+                            <%= randomArtwork.artDate %>
+                                <%= randomArtwork.artCity %>
+                                    <%= randomArtwork.artCountry %>
+                </p>
+            </div>
+            <% } %>
+    </div>
+
+    <%- include("partials/footer.ejs")%>

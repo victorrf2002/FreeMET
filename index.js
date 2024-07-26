@@ -52,13 +52,13 @@ app.post("/random", async (req, res) => {
         };
 
         console.log(artwork);
-        res.render("index.ejs")
+        res.render("random.ejs", { randomArtwork: artwork });
 
         // Error handling
 
     } catch (error) {
         console.error("Failed to make request:", error.message);
-        res.render("index.ejs", {
+        res.render("random.ejs", {
             error: error.message
         });
     }
