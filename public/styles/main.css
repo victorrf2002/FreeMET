@@ -50,3 +50,8 @@ body {
 .art-info {
     background-color: #776B5D;
 }
+
+.container-art {
+    display: flex;
+    flex-direction: row;
+}
