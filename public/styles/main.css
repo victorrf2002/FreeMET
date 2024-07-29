@@ -40,3 +40,13 @@ body {
     width: 500px;
     height: 500px;
 }
+
+.container-random {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.art-info {
+    background-color: #776B5D;
+}
