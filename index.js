@@ -37,7 +37,8 @@ app.post("/random", async (req, res) => {
 
         // Fetching the artwork given the randomID and creating a class for it with all the necessary attributes
 
-        const result = await axios.get(API_URL + "/objects/" + randomID);
+        // const result = await axios.get(API_URL + "/objects/" + randomID);
+        const result = await axios.get("https://collectionapi.metmuseum.org/public/collection/v1/objects/45734");
         const randomArtwork = result.data;
         const artwork = {
             "artID": randomArtwork.objectID,

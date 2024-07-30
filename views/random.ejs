@@ -5,31 +5,34 @@
             <div class="container-art">
                 <img id="art-image" src="<%= randomArtwork.artImage %>">
                 <div class="art-info">
+
+                    <p>
+                        <%= randomArtwork.artArtistName%>:
+                            <%= randomArtwork.artArtistBio %>
+                    </p>
+                    <p>
+                        Made in: <%= randomArtwork.artDate %>
+                    </p>
+                    <p>
+                        <%= randomArtwork.artCity %>, <%= randomArtwork.artCountry %>
+                    </p>
                     <p>
                         Period: <%= randomArtwork.artPeriod %>
-                    </p>
-                    <p>
-                        <%= randomArtwork.artArtistBio %>
-                    </p>
-                    <p>
-                        <%= randomArtwork.artDate %>
-                    </p>
-                    <p>
-                        <%= randomArtwork.artCity %>
-                    </p>
-                    <p>
-                        <%= randomArtwork.artCountry %>
                     </p>
 
                 </div>
             </div>
 
-            <h2>
-                <%= randomArtwork.artTitle%>
-            </h2>
-            <h3>
-                <%= randomArtwork.artArtistName%>
-            </h3>
+            <div class="art-title">
+                <h2>
+                    <%= randomArtwork.artTitle%>
+                </h2>
+                <h3>
+                    <%= randomArtwork.artArtistName%>
+                </h3>
+            </div>
+
+
 
             <% } %>
     </div>

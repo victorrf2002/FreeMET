@@ -39,19 +39,36 @@ body {
 #art-image {
     width: 500px;
     height: 500px;
+    border: 40px solid;
+    border-image: url("/assets/4b176113032b7b279c1c24d2675a2555.png") 100;
+
 }
 
 .container-random {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #776B5D;
 }
 
 .art-info {
     background-color: #776B5D;
+    width: 250px;
+    height: 250px;
+    align-self: flex-end;
+    text-align: center;
+    border: 3px solid black;
+    margin: 7px;
+    color: #EBE3D5;
 }
 
 .container-art {
     display: flex;
     flex-direction: row;
+    gap: 10px;
+}
+
+.art-title {
+    margin-right: 250px;
+    text-align: center;
 }
