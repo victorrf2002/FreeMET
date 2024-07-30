@@ -1,40 +1,72 @@
 <%- include("partials/header.ejs") %>
+    <header>
+        <div id="back-icon">
+            <a href="/"><img src="/assets/arrow_back_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg"></a>
+        </div>
+        <div id="renew-icon">
+            <a href="javascript:location.reload()"><img
+                    src="/assets/autorenew_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg"></a>
 
-    <div class="container-random">
-        <% if (locals.randomArtwork) { %>
-            <div class="container-art">
-                <img id="art-image" src="<%= randomArtwork.artImage %>">
-                <div class="art-info">
+        </div>
 
-                    <p>
-                        <%= randomArtwork.artArtistName%>:
-                            <%= randomArtwork.artArtistBio %>
-                    </p>
-                    <p>
-                        Made in: <%= randomArtwork.artDate %>
-                    </p>
-                    <p>
-                        <%= randomArtwork.artCity %>, <%= randomArtwork.artCountry %>
-                    </p>
-                    <p>
-                        Period: <%= randomArtwork.artPeriod %>
-                    </p>
+    </header>
+    <main>
+        <div class="container-random">
+            <% if (locals.randomArtwork) { %>
+                <div class="container-art">
 
+                    <a href="<%= randomArtwork.artImage %>"><img id="art-image" src="<%= randomArtwork.artImage %>"></a>
+
+                    <div class="art-info">
+                        <% if(randomArtwork.artArtistName && randomArtwork.artArtistBio) { %>
+                            <p>
+                                <%= randomArtwork.artArtistName%>: <%= randomArtwork.artArtistBio %>
+
+                            </p>
+                            <% } else if(randomArtwork.artArtistName) { %>
+                                <p>
+                                    <%= randomArtwork.artArtistName%>
+                                </p>
+                                <%} %>
+
+                                    <% if(randomArtwork.artDate) { %>
+                                        <p>
+                                            Made in: <%= randomArtwork.artDate %>
+                                        </p>
+                                        <% } %>
+
+                                            <% if(randomArtwork.artCity) { %>
+                                                <p>
+                                                    <%= randomArtwork.artCity %>, <%= randomArtwork.artCountry %>
+                                                </p>
+                                                <% } else if(randomArtwork.artCountry) { %>
+                                                    <%= randomArtwork.artCountry %>
+                                                        <% } %>
+
+                                                            <% if(randomArtwork.artPeriod) { %>
+                                                                <p>
+                                                                    Period: <%= randomArtwork.artPeriod %>
+                                                                </p>
+                                                                <% } %>
+
+
+
+
+                    </div>
                 </div>
-            </div>
 
-            <div class="art-title">
-                <h2>
-                    <%= randomArtwork.artTitle%>
-                </h2>
-                <h3>
-                    <%= randomArtwork.artArtistName%>
-                </h3>
-            </div>
-
+                <div class="art-title">
+                    <h1>
+                        <%= randomArtwork.artTitle%>
+                    </h1>
+                    <h3>
+                        <%= randomArtwork.artArtistName%>
+                    </h3>
+                </div>
 
 
-            <% } %>
-    </div>
 
-    <%- include("partials/footer.ejs")%>
+                <% } %>
+        </div>
+
+        <%- include("partials/footer.ejs")%>
