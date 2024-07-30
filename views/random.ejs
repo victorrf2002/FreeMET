@@ -15,44 +15,53 @@
             <% if (locals.randomArtwork) { %>
                 <div class="container-art">
 
-                    <a href="<%= randomArtwork.artImage %>"><img id="art-image" src="<%= randomArtwork.artImage %>"></a>
+                    <% if(randomArtwork.artImage) { %>
+                        <a href="<%= randomArtwork.artImage %>"><img id="art-image"
+                                src="<%= randomArtwork.artImage %>"></a>
+                        <% } else { %>
+                            <h1>No image available</h1>
+                            <% } %>
 
-                    <div class="art-info">
-                        <% if(randomArtwork.artArtistName && randomArtwork.artArtistBio) { %>
-                            <p>
-                                <%= randomArtwork.artArtistName%>: <%= randomArtwork.artArtistBio %>
 
-                            </p>
-                            <% } else if(randomArtwork.artArtistName) { %>
-                                <p>
-                                    <%= randomArtwork.artArtistName%>
-                                </p>
-                                <%} %>
 
-                                    <% if(randomArtwork.artDate) { %>
+
+                                <div class="art-info">
+                                    <% if(randomArtwork.artArtistName && randomArtwork.artArtistBio) { %>
                                         <p>
-                                            Made in: <%= randomArtwork.artDate %>
+                                            <%= randomArtwork.artArtistName%>: <%= randomArtwork.artArtistBio %>
+
                                         </p>
-                                        <% } %>
+                                        <% } else if(randomArtwork.artArtistName) { %>
+                                            <p>
+                                                <%= randomArtwork.artArtistName%>
+                                            </p>
+                                            <%} %>
 
-                                            <% if(randomArtwork.artCity) { %>
-                                                <p>
-                                                    <%= randomArtwork.artCity %>, <%= randomArtwork.artCountry %>
-                                                </p>
-                                                <% } else if(randomArtwork.artCountry) { %>
-                                                    <%= randomArtwork.artCountry %>
-                                                        <% } %>
+                                                <% if(randomArtwork.artDate) { %>
+                                                    <p>
+                                                        Made in: <%= randomArtwork.artDate %>
+                                                    </p>
+                                                    <% } %>
 
-                                                            <% if(randomArtwork.artPeriod) { %>
-                                                                <p>
-                                                                    Period: <%= randomArtwork.artPeriod %>
-                                                                </p>
-                                                                <% } %>
+                                                        <% if(randomArtwork.artCity) { %>
+                                                            <p>
+                                                                <%= randomArtwork.artCity %>, <%=
+                                                                        randomArtwork.artCountry %>
+                                                            </p>
+                                                            <% } else if(randomArtwork.artCountry) { %>
+                                                                <%= randomArtwork.artCountry %>
+                                                                    <% } %>
+
+                                                                        <% if(randomArtwork.artPeriod) { %>
+                                                                            <p>
+                                                                                Period: <%= randomArtwork.artPeriod %>
+                                                                            </p>
+                                                                            <% } %>
 
 
 
 
-                    </div>
+                                </div>
                 </div>
 
                 <div class="art-title">
@@ -66,7 +75,11 @@
 
 
 
-                <% } %>
+                <% } else { %>
+                    <script>
+                        location.reload();
+                    </script>
+                    <% } %>
         </div>
 
-        <%- include("partials/footer.ejs")%>
+        <% - include("partials/footer.ejs") %>
